@@ -1,0 +1,165 @@
+
+.rubrica-button{
+    position: relative;
+    top: -50px;
+    z-index: 999;
+    float: right;
+    margin-right: 10px;
+}
+
+.rubrica-container {
+    width: 100%;
+    position: fixed;
+    height: 60%;
+    bottom: 12px;
+    z-index: 1000;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.rubrica-container .topo img {
+    padding: 0;
+    margin: 0;
+    display: block;
+}
+
+.rubrica {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    height: 100%;
+}
+.rubrica-box {
+   display: flex;
+   flex-direction: column;
+   margin: 0;
+   border-radius: 6px;
+   border:3px solid #43aa8d;
+}
+
+.rubrica-footer{
+    background-color: rgb(189, 188, 190);
+    height: 100%;
+    display: flex;
+   flex-direction: row;
+   justify-content: space-between
+}
+
+.rubrica-content{
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    overflow:auto; 
+    padding: 5px;
+    height:53vh;
+}
+
+.rubrica-box-footer-1{
+    width: 50%;
+}
+
+.rubrica-box-footer-2{
+    width: 50%;
+    text-align: center;
+    padding-top: 1%;
+}
+
+.rubrica-box-footer-3{
+    align-items: flex-end;
+    width: 50%;
+}
+
+.rubrica-buttons-send{
+    float: right;
+    padding: 2%;
+    padding-right: 3%;
+}
+
+.clear-button{
+    float: left;
+    margin-top: 2%;
+    margin-left: 4%;
+}
+
+.rubrica-theme {
+    padding: 20px;
+    width: 100%;
+}
+
+.rubrica-display{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+.rubrica-table{
+    width: 100%; 
+    /* border: 1px solid rgb(0, 0, 0); */
+}
+
+.th-title{
+    text-align: center;
+    padding: 5px;
+    border-bottom: 3px solid;
+    /* margin-bottom: 2px; */
+    padding-bottom: 15px;
+}
+
+.td-grade{
+    text-align: center;
+    width: 10%;
+}
+
+.td-rubrica{
+    width: 20%;
+    text-align: center;
+}
+/* revisar */
+
+.rubrica-table-tr{
+    /* border: 1px solid rgb(152, 155, 17); */
+    padding: 10px;
+}
+
+.rubrica-table-td{
+    border-bottom: 1px solid rgb(152, 155, 17);
+    padding: 10px;
+}
+
+.td-rubrica-descripton{
+    text-align: justify;
+}
+
+.input-total{
+    border: none;
+    width: 40px;
+    text-align: center;
+    background: rgb(189, 188, 190);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-cancel-rubrica{
+    background-color: red;
+    color: white;
+    margin-right: 10px;
+    font-weight: 400;
+    padding: .375rem .75rem;
+    border-radius: .25rem;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid transparent;
+
+}
+
+.btn-cancel:hover{
+    cursor: pointer;
+}
+
+.color-rubrica-pencil{
+    color: green;
+}
