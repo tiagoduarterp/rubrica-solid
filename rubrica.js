@@ -26,7 +26,7 @@ function createTr(value,group) {
 
 function createTable() {
   let corpo = ''
-  for (const key in itens) {
+  for (const key in ITENS_AVALIATIVOS_JSON) {
     corpo += `<div class="rubrica-display">
                 <div class="rubrica-theme">
                     <table class="rubrica-table">
@@ -38,7 +38,7 @@ function createTable() {
                             </tr>
                         </thead>
                         <tbody>
-                          `+ createTr(itens[key],key) + `
+                          `+ createTr(ITENS_AVALIATIVOS_JSON[key],key) + `
                         </tbody>
                       </table>
                 </div>
@@ -104,9 +104,9 @@ let closeRubrica = function () {
   attempty = ''
   $('body').find('#rubrica_modal').remove()
 }
-if (window.location.pathname == '/mod/quiz/report.php') {
+/* if (window.location.pathname == '/mod/quiz/report.php') {
   createButton()
-}
+} */
 
 
 
@@ -129,7 +129,7 @@ function setGrade(value,group){
 
 
 function clearButtons(){
-  for (const key in itens) {
+  for (const key in ITENS_AVALIATIVOS_JSON) {
     let button = document.getElementsByName(key);
     for(var i=0;i<button.length;i++)
     button[i].checked = false;
@@ -147,17 +147,21 @@ function searchInfo(obj,grade){
 
 function registerRubrica(){
   
-  let tema = searchInfo(itens.tema, totalTema)
-  let estrutura  = searchInfo(itens.estrutura, totalEstrutura)
-  let linguagem  =searchInfo(itens.linguagem, totalLinguagem)
+  let tema = searchInfo(ITENS_AVALIATIVOS_JSON.tema, totalTema)
+  let estrutura  = searchInfo(ITENS_AVALIATIVOS_JSON.estrutura, totalEstrutura)
+  let linguagem  =searchInfo(ITENS_AVALIATIVOS_JSON.linguagem, totalLinguagem)
   let result =`
           <p><strong>Avaliado :&nbsp;</strong>Tema&nbsp; |&nbsp; <b>Nota :</b> `+tema.nota+`&nbsp; &nbsp;|&nbsp; &nbsp;<b>Devolutiva:</b>&nbsp;&nbsp;`+tema.titulo+`</p>
           <p><strong>Avaliado :&nbsp;</strong>Estrutura&nbsp; |&nbsp; <b>Nota :</b> `+estrutura.nota+`&nbsp; &nbsp;|&nbsp; &nbsp;<b>Devolutiva:</b>&nbsp;&nbsp;`+estrutura.titulo+`</p>
           <p><strong>Avaliado :&nbsp;</strong>Linguagem&nbsp; |&nbsp; <b>Nota :</b> `+linguagem.nota+`&nbsp; &nbsp;|&nbsp; &nbsp;<b>Devolutiva:</b>&nbsp;&nbsp;`+linguagem.titulo+`</p>     
           `
-  let el = document.getElementById('q'+attempty+':1_-comment_ideditable')
-  el.querySelector('p').innerHTML = result
-  document.getElementById('q'+attempty+':1_-mark').value = soma
+          /* let el = document.getElementById('q'+attempty+':1_-comment_ideditable')
+          el.querySelector('p').innerHTML = result
+          document.getElementById('q'+attempty+':1_-mark').value = soma     */
+
+  let el = document.getElementById('final-value').innerHTML = result
+  //el.querySelector('textarea').value = result
+  document.getElementById('grade').value = soma
 
   closeRubrica()
 }
